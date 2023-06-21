@@ -32,8 +32,6 @@ app.use(cors());
 app.use(express.json());
 app.use(requestLogger);
 
-let notes = [];
-
 app.get("/", (request, response) => {
   response.send("<h1>Hello World!</h1>");
 });
@@ -94,9 +92,10 @@ app.post("/api/notes", (request, response, next) => {
     .catch((error) => next(error));
 });
 
-app.delete("/api/notes/:id", (request, response) => {
+app.delete("/api/notes/:id", (request, response, next) => {
   const id = request.params.id;
   Note.findByIdAndRemove(id)
+    // eslint-disable-next-line no-unused-vars
     .then((result) => {
       response.status(204).end();
     })
