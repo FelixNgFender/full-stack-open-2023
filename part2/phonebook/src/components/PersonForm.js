@@ -46,15 +46,23 @@ const PersonForm = ({ persons, setPersons, setMessage }) => {
       return;
     }
 
-    personService.addPerson(personObject).then((returnedPerson) => {
-      setPersons(persons.concat(returnedPerson));
-      setMessage(`Added ${returnedPerson.name}`);
-      setTimeout(() => {
-        setMessage(null);
-      }, 5000);
-      setNewName("");
-      setNewNumber("");
-    });
+    personService
+      .addPerson(personObject)
+      .then((returnedPerson) => {
+        setPersons(persons.concat(returnedPerson));
+        setMessage(`Added ${returnedPerson.name}`);
+        setTimeout(() => {
+          setMessage(null);
+        }, 5000);
+        setNewName("");
+        setNewNumber("");
+      })
+      .catch((error) => {
+        setMessage(error.response.data.error);
+        setTimeout(() => {
+          setMessage(null);
+        }, 5000);
+      });
   };
 
   const existsSameName = (name) => {
