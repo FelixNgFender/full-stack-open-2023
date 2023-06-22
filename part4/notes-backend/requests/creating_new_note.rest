@@ -2,6 +2,7 @@ POST http://localhost:3001/api/notes
 Content-Type: application/json
 
 {
-  "content": "OMG Bing Chilling is so good",
-  "important": true
+  "content": "User id of the note creator is at the start sent along the request",
+  "important": true,
+  "userId": "649419ce4b73b008551b5e0b"
 }
