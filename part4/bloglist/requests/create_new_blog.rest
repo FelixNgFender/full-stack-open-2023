@@ -1,0 +1,10 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1lIG1heSBiZW8gZ2FnYWdhIiwiaWQiOiI2NDk1MTNhNjYzZDJmOWQyYjFhOWY2MmUiLCJpYXQiOjE2ODc0OTYyMjcsImV4cCI6MTY4NzQ5OTgyN30.Jw4lvxx7QKq6VZDyNLtc2606y3VijKllgEROcHbevfU
+
+{
+  "title": "mikooooooooo",
+  "author": "Felix",
+  "url": "www.google.com",
+  "likes": 0
+}
